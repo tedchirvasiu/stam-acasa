@@ -64,15 +64,15 @@ namespace IdentityServer.Pages.Account
             public string ConfirmPassword { get; set; }
         }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string returnUrl = null)
         {
-            ReturnUrl = "http://localhost:3000/register-complete";
+            ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
-            returnUrl = "http://localhost:3000/register-complete"; //returnUrl ?? Url.Content("~/");
+            returnUrl = returnUrl ?? Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {

@@ -62,7 +62,7 @@ const Header = ({ user, loadUser }) => {
         </>
       ) : (
         <>
-          <a href={`http://localhost:5001/account/register`}>Inregistrare</a>
+          <a href={`http://localhost:5001/account/register?returnUrl=${window.location}register-complete`}>Inregistrare</a>
           <a onClick={handleLogin}>Login</a>
         </>
       )}
