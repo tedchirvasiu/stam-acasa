@@ -61,7 +61,10 @@ const Header = ({ user, loadUser }) => {
           <a onClick={handleLogout}>Logout</a>
         </>
       ) : (
-        <a onClick={handleLogin}>Login</a>
+        <>
+          <a href={`http://localhost:5001/account/register`}>Inregistrare</a>
+          <a onClick={handleLogin}>Login</a>
+        </>
       )}
     </span>
   );
